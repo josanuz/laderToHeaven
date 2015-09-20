@@ -69,7 +69,7 @@ var initScene = function() {
     });
 
 /**SkyBox**/
-var skybox = BABYLON.Mesh.CreateBox("skyBox", 1000.0, scene);
+var skybox = BABYLON.Mesh.CreateBox("skyBox", 1400.0, scene);
     var skyboxMaterial = new BABYLON.StandardMaterial("skyBox", scene);
     skyboxMaterial.backFaceCulling = false;
     skyboxMaterial.reflectionTexture = new BABYLON.CubeTexture("textures/skybox", scene);
@@ -78,6 +78,10 @@ var skybox = BABYLON.Mesh.CreateBox("skyBox", 1000.0, scene);
     skyboxMaterial.specularColor = new BABYLON.Color3(0, 0, 0);
     skybox.material = skyboxMaterial;
 /********/
+    scene.fogMode = BABYLON.Scene.FOGMODE_EXP;
+    scene.fogColor = new BABYLON.Color3(0.9, 0.9, 0.85);
+    scene.fogDensity = 0.003;
+
     initGame();
 
 
