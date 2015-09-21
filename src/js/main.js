@@ -38,7 +38,7 @@ var onload = function () {
             if (shroom.killed) {
                 // Nothing to do here
             } else {
-                shroom.position.z -= 0.5;
+                shroom.position.z -= 0.9;
             }
         });
     });
@@ -78,9 +78,9 @@ var skybox = BABYLON.Mesh.CreateBox("skyBox", 1400.0, scene);
     skyboxMaterial.specularColor = new BABYLON.Color3(0, 0, 0);
     skybox.material = skyboxMaterial;
 /********/
-    scene.fogMode = BABYLON.Scene.FOGMODE_EXP;
-    scene.fogColor = new BABYLON.Color3(0.9, 0.9, 0.85);
-    scene.fogDensity = 0.003;
+    //scene.fogMode = BABYLON.Scene.FOGMODE_EXP;
+    //scene.fogColor = new BABYLON.Color3(0.9, 0.9, 0.85);
+    //scene.fogDensity = 0.003;
 
     initGame();
 
@@ -127,7 +127,7 @@ var initGame  = function(){
 // Creates a shroom in a random lane
 var createEnemy = function () {
     // The starting position of toads
-    var posZ = 100;
+    var posZ = 1000;
 
     // Get a random lane
     var posX = LANES_POSITIONS[Math.floor(Math.random() * LANE_NUMBER)];
@@ -146,4 +146,4 @@ var createEnemy = function () {
 };
 
 // Creates a clone every 1 seconds
-setInterval(createEnemy, 1000);
+setInterval(createEnemy, 500);
